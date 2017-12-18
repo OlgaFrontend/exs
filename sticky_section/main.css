@@ -1,0 +1,46 @@
+body {
+	font-size: 24px;
+	position: relative;
+}
+
+header {
+	height: 200px;
+	background-color: red;
+}
+
+.one {
+	background-color: yellow;
+	height: 200px;
+}
+
+.two {
+	background-color: green;
+	height: 200px;
+}
+
+.three {
+	background-color: pink;
+	height: 200px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.relative {
+	position: relative;
+	/*bottom: 400px;*/
+	width: 100%;
+}
+
+/*.fixed {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}*/
+
+
+
+footer {
+	height: 400px;
+	background-color: grey;
+}
