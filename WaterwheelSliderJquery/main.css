@@ -1,0 +1,38 @@
+/*.gallery-js {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	background: blue;
+	margin: 0 auto;
+}*/
+
+/*.gallery {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	background: pink;
+	margin: 0 auto;
+}*/
+
+.gallery img {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	display: block;
+	border: 5px solid purple;
+}
+
+
+.gallery {
+	display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.gallery div {
+	margin: 2%;
+}
+

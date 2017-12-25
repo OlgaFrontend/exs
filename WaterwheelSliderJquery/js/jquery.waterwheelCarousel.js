@@ -28,6 +28,8 @@
     var carousel = this;
     var options = {};
     var data = {};
+    // var clickingItem = document.querySelector('.clicking');
+    // console.log(clickingItem);
 
     function initializeCarouselData() {
       data = {
@@ -35,7 +37,7 @@
         totalItems:             $(carousel).find('img').length,
         containerWidth:         $(carousel).width(),
         containerHeight:        $(carousel).height(),
-        currentCenterItem:      null,
+        currentCenterItem:      null, 
         previousCenterItem:     null,
         items:                  [],
         calculations:           [],
@@ -148,7 +150,6 @@
     function preCalculatePositionProperties() {
       // The 0 index is the center item in the carousel
       var $firstItem = data.itemsContainer.find('img:first');
-
       data.calculations[0] = {
         distance: 0,
         offset:   0,
@@ -196,6 +197,7 @@
       for (var i = 0; i < data.totalItems; i++) {
         data.items[i] = $(data.items[i]);
       }
+
 
       // May need to set the horizon if it was set to auto
       if (options.horizon === 0) {
@@ -251,6 +253,7 @@
      * figure out what items go where and will animate them there
      */
     function setupStarterRotation() {
+      
       options.startingItem = (options.startingItem === 0) ? Math.round(data.totalItems / 2) : options.startingItem;
 
       data.rightItemsCount = Math.ceil((data.totalItems-1) / 2);
@@ -642,7 +645,7 @@
 
   $.fn.waterwheelCarousel.defaults = {
     // number tweeks to change apperance
-    startingItem:               1,   // item to place in the center of the carousel. Set to 0 for auto
+    startingItem:               0,   // item to place in the center of the carousel. Set to 0 for auto
     separation:                 150, // distance between items in carousel
     separationMultiplier:       0.6, // multipled by separation distance to increase/decrease distance for each additional item
     horizonOffset:              0,   // offset each item from the "horizon" by this amount (causes arching)
@@ -661,7 +664,7 @@
     // misc
     linkHandling:               2,                 // 1 to disable all (used for facebox), 2 to disable all but center (to link images out)
     autoPlay:                   0,                 // indicate the speed in milliseconds to wait before autorotating. 0 to turn off. Can be negative
-    orientation:                'vertical',      // indicate if the carousel should be 'horizontal' or 'vertical'
+    orientation:                'horizontal',      // indicate if the carousel should be 'horizontal' or 'vertical'
     activeClassName:            'carousel-center', // the name of the class given to the current item in the center
     keyboardNav:                false,             // set to true to move the carousel with the arrow keys
     keyboardNavOverride:        true,              // set to true to override the normal functionality of the arrow keys (prevents scrolling)
